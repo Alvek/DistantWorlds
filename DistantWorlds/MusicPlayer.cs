@@ -108,7 +108,7 @@ namespace DistantWorlds
             string_3 = Directory.GetFiles(folder, "*.mp3");
             if (string_3 != null && string_3.Length != 0)
             {
-                if (!File.Exists(string_2 + string_1))
+                if (!FileExist.FileExists(string_2 + string_1))
                 {
                     throw new ApplicationException("Music folder does not contain Theme music: " + string_1);
                 }

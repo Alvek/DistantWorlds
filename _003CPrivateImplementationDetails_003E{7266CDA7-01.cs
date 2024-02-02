@@ -23,25 +23,38 @@ internal class main
     [STAThread]
     public static void Main(string[] args)
     {
-        if (args.Length == 0)
+        try
         {
-            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
-
-            Class5.smethod_0();
-        }
-        else
-        {
-            if (args[0].ToUpperInvariant() == "/GenerateHotkeysMapFile".ToUpperInvariant())
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+            if (args.Length == 0)
             {
-                ExpansionModMain.GenerateDefaultFiles();
-                string _ModRootFolder = "AdvMods\\BaconMod";
-                string _HotKeyFileName = "BaconModHotKeysMappingFile.json";
-                BaconKeyMapper baconKeyMapper = new BaconKeyMapper(_HotKeyFileName);
-                baconKeyMapper.GenerateDefaultFile(_ModRootFolder);
+                AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
+
+                Class5.smethod_0();
+            }
+            else
+            {
+                if (args[0].ToUpperInvariant() == "/GenerateHotkeysMapFile".ToUpperInvariant())
+                {
+                    ExpansionModMain.GenerateDefaultFiles();
+                    string _ModRootFolder = "AdvMods\\BaconMod";
+                    string _HotKeyFileName = "BaconModHotKeysMappingFile.json";
+                    BaconKeyMapper baconKeyMapper = new BaconKeyMapper(_HotKeyFileName);
+                    baconKeyMapper.GenerateDefaultFile(_ModRootFolder);
+                }
             }
         }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.ToString());
+        }        
     }
 
+    private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+    {
+        Exception ex = (Exception)e.ExceptionObject;
+        MessageBox.Show(ex.ToString());
+    }
 
     private static System.Reflection.Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
     {
@@ -50,7 +63,7 @@ internal class main
             if (Environment.Is64BitProcess)
             {
                 string path = @"x64\SlimDX.dll";
-                if (File.Exists(path))
+                if (FileExist.FileExists(path))
                 {
                     return Assembly.LoadFrom(Path.GetFullPath(path));
                 }
@@ -60,7 +73,7 @@ internal class main
             else
             {
                 string path = @"x86\SlimDX.dll";
-                if (File.Exists(path))
+                if (FileExist.FileExists(path))
                 {
                     return Assembly.LoadFrom(Path.GetFullPath(path));
                 }
@@ -73,7 +86,7 @@ internal class main
             if (Environment.Is64BitProcess)
             {
                 string path = @"x64\Facepunch.Steamworks.Win64.dll";
-                if (File.Exists(path))
+                if (FileExist.FileExists(path))
                 {
                     return Assembly.LoadFrom(Path.GetFullPath(path));
                 }
@@ -83,7 +96,7 @@ internal class main
             else
             {
                 string path = @"x86\Facepunch.Steamworks.Win32.dll";
-                if (File.Exists(path))
+                if (FileExist.FileExists(path))
                 {
                     return Assembly.LoadFrom(Path.GetFullPath(path));
                 }

@@ -10,10 +10,6 @@
 		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<EmbeddedResourceUseDependentUponConvention>true</EmbeddedResourceUseDependentUponConvention>
-		<PostBuildEvent>
-			call "$(DevEnvDir)..\Tools\VsDevCmd.bat"
-			editbin /largeaddressaware $(TargetPath)
-		</PostBuildEvent>
 		<PlatformTarget>AnyCPU</PlatformTarget>
 		<StartupObject>main</StartupObject>
 	</PropertyGroup>
