@@ -7454,7 +7454,7 @@ namespace DistantWorlds
                         customizationSetName = string.Empty;
                     }
                     string text2 = text + "GameText.txt";
-                    if (FileExist.FileExists(text2))
+                    if (File.Exists(text2))
                     {
                         TextResolver.LoadText(text2);
                     }
@@ -7499,7 +7499,7 @@ namespace DistantWorlds
             int num = 0;
             try
             {
-                if (FileExist.FileExists(text))
+                if (File.Exists(text))
                 {
                     FileStream fileStream = File.OpenRead(text);
                     StreamReader streamReader = new StreamReader(fileStream);
@@ -7924,7 +7924,7 @@ namespace DistantWorlds
                 {
                     text6 = Application.StartupPath + "\\Customization\\" + text4 + "\\sounds\\effects\\";
                 }
-                if (!string.IsNullOrEmpty(text6) && FileExist.FileExists(text6 + "button1.wav"))
+                if (!string.IsNullOrEmpty(text6) && File.Exists(text6 + "button1.wav"))
                 {
                     CloseButton.SetSoundLocation(text6 + "button1.wav");
                 }
@@ -8015,7 +8015,7 @@ namespace DistantWorlds
             if (string.IsNullOrEmpty(string_2))
             {
                 string text = Application.StartupPath + "\\GameText.txt";
-                if (FileExist.FileExists(text))
+                if (File.Exists(text))
                 {
                     TextResolver.LoadText(text);
                 }
@@ -8023,7 +8023,7 @@ namespace DistantWorlds
             else
             {
                 string text2 = Application.StartupPath + "\\Customization\\" + string_2 + "\\GameText.txt";
-                if (FileExist.FileExists(text2))
+                if (File.Exists(text2))
                 {
                     TextResolver.LoadText(text2);
                 }
@@ -8096,7 +8096,7 @@ namespace DistantWorlds
             {
                 text4 = Application.StartupPath + "\\Customization\\" + string_2 + "\\sounds\\effects\\";
             }
-            if (!string.IsNullOrEmpty(text4) && FileExist.FileExists(text4 + "button1.wav"))
+            if (!string.IsNullOrEmpty(text4) && File.Exists(text4 + "button1.wav"))
             {
                 CloseButton.SetSoundLocation(text4 + "button1.wav");
             }
@@ -8143,7 +8143,7 @@ namespace DistantWorlds
         private void method_5(string string_2, string string_3)
         {
             string text = string_2 + "button2.wav";
-            if (!string.IsNullOrEmpty(string_3) && FileExist.FileExists(string_3 + "button2.wav"))
+            if (!string.IsNullOrEmpty(string_3) && File.Exists(string_3 + "button2.wav"))
             {
                 text = string_3 + "button2.wav";
             }
@@ -8154,7 +8154,7 @@ namespace DistantWorlds
         {
             if (control_0 is GlassButton)
             {
-                if (!string.IsNullOrEmpty(string_3) && FileExist.FileExists(string_3 + "button1.wav"))
+                if (!string.IsNullOrEmpty(string_3) && File.Exists(string_3 + "button1.wav"))
                 {
                     GlassButton.SetSoundLocation(string_3 + "button1.wav");
                 }
@@ -8165,7 +8165,7 @@ namespace DistantWorlds
             }
             if (control_0 is HoverButton)
             {
-                if (!string.IsNullOrEmpty(string_3) && FileExist.FileExists(string_3 + "button2.wav"))
+                if (!string.IsNullOrEmpty(string_3) && File.Exists(string_3 + "button2.wav"))
                 {
                     HoverButton.SetSoundLocation(string_3 + "button2.wav");
                 }
@@ -8176,7 +8176,7 @@ namespace DistantWorlds
             }
             if (control_0 is ListViewBase)
             {
-                if (!string.IsNullOrEmpty(string_3) && FileExist.FileExists(string_3 + "grid.wav"))
+                if (!string.IsNullOrEmpty(string_3) && File.Exists(string_3 + "grid.wav"))
                 {
                     ListViewBase.SetSoundLocation(string_3 + "grid.wav");
                 }
@@ -8187,7 +8187,7 @@ namespace DistantWorlds
             }
             if (control_0 is HoverMenuItem)
             {
-                if (!string.IsNullOrEmpty(string_3) && FileExist.FileExists(string_3 + "button2.wav"))
+                if (!string.IsNullOrEmpty(string_3) && File.Exists(string_3 + "button2.wav"))
                 {
                     HoverMenuItem.SetSoundLocation(string_3 + "button2.wav");
                 }
@@ -9215,11 +9215,11 @@ namespace DistantWorlds
             else
             {
                 string text3 = Application.StartupPath + "\\Customization\\" + text + "\\";
-                if (FileExist.FileExists(text3 + "about.txt"))
+                if (File.Exists(text3 + "about.txt"))
                 {
                     text2 = File.ReadAllText(text3 + "about.txt");
                 }
-                if (FileExist.FileExists(text3 + "about.png"))
+                if (File.Exists(text3 + "about.png"))
                 {
                     image = (Bitmap)Image.FromFile(text3 + "about.png");
                 }
@@ -11674,7 +11674,7 @@ namespace DistantWorlds
             Game result = null;
             try
             {
-                if (FileExist.FileExists(string_2))
+                if (File.Exists(string_2))
                 {
                     List<object> list = new List<object>();
                     using (FileStream stream_ = new FileStream(string_2, FileMode.Open, FileAccess.Read))
@@ -16764,23 +16764,23 @@ namespace DistantWorlds
                     text2 = Application.StartupPath + "\\Customization\\" + main_0.string_3 + "\\help\\";
                 }
                 string text3 = text2 + encyclopediaItem_0.Filename;
-                if (!FileExist.FileExists(text3))
+                if (!File.Exists(text3))
                 {
                     text3 = text + encyclopediaItem_0.Filename;
-                    if (!FileExist.FileExists(text3))
+                    if (!File.Exists(text3))
                     {
                         text3 = text + "DE_" + encyclopediaItem_0.Filename;
-                        if (!FileExist.FileExists(text3))
+                        if (!File.Exists(text3))
                         {
                             text3 = text + "FR_" + encyclopediaItem_0.Filename;
-                            if (!FileExist.FileExists(text3))
+                            if (!File.Exists(text3))
                             {
                                 text3 = text + "ES_" + encyclopediaItem_0.Filename;
                             }
                         }
                     }
                 }
-                if (FileExist.FileExists(text3))
+                if (File.Exists(text3))
                 {
                     if (encyclopediaItem_0.Category == EncyclopediaCategory.Races && encyclopediaItem_0.Title != TextResolver.GetText("Alien Races"))
                     {
@@ -16849,13 +16849,13 @@ namespace DistantWorlds
                 else
                 {
                     string text11 = Application.StartupPath + "\\help\\default.mht";
-                    if (!FileExist.FileExists(text11))
+                    if (!File.Exists(text11))
                     {
                         text11 = Application.StartupPath + "\\help\\DE_default.mht";
-                        if (!FileExist.FileExists(text11))
+                        if (!File.Exists(text11))
                         {
                             text11 = Application.StartupPath + "\\help\\FR_default.mht";
-                            if (!FileExist.FileExists(text11))
+                            if (!File.Exists(text11))
                             {
                                 text11 = Application.StartupPath + "\\help\\ES_default.mht";
                             }
@@ -16880,13 +16880,13 @@ namespace DistantWorlds
                 if (!flag)
                 {
                     string text12 = Application.StartupPath + "\\help\\default.mht";
-                    if (!FileExist.FileExists(text12))
+                    if (!File.Exists(text12))
                     {
                         text12 = Application.StartupPath + "\\help\\DE_default.mht";
-                        if (!FileExist.FileExists(text12))
+                        if (!File.Exists(text12))
                         {
                             text12 = Application.StartupPath + "\\help\\FR_default.mht";
-                            if (!FileExist.FileExists(text12))
+                            if (!File.Exists(text12))
                             {
                                 text12 = Application.StartupPath + "\\help\\ES_default.mht";
                             }
@@ -17396,7 +17396,7 @@ namespace DistantWorlds
             IWMPPlaylist val = mediaPlayer.newPlaylist("", "");
             foreach (string text in string_2)
             {
-                if (FileExist.FileExists(text))
+                if (File.Exists(text))
                 {
                     val.appendItem(mediaPlayer.newMedia(text));
                 }
@@ -20030,7 +20030,7 @@ namespace DistantWorlds
             if (!string.IsNullOrEmpty(lblStartNewGameTheGalaxyLoadExistingFilepath.Text) && lblStartNewGameTheGalaxyLoadExistingFilepath.Text != "(" + TextResolver.GetText("No Galaxy Map specified") + ")")
             {
                 string text2 = lblStartNewGameTheGalaxyLoadExistingFilepath.Text;
-                if (FileExist.FileExists(text2))
+                if (File.Exists(text2))
                 {
                     gameStartResets.GalaxyFilepath = text2;
                     gameStartResets.ResetResources = chkStartNewGameTheGalaxyLoadExistingResources.Checked;

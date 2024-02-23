@@ -63,7 +63,7 @@ internal class main
             if (Environment.Is64BitProcess)
             {
                 string path = @"x64\SlimDX.dll";
-                if (FileExist.FileExists(path))
+                if (File.Exists(path))
                 {
                     return Assembly.LoadFrom(Path.GetFullPath(path));
                 }
@@ -73,7 +73,7 @@ internal class main
             else
             {
                 string path = @"x86\SlimDX.dll";
-                if (FileExist.FileExists(path))
+                if (File.Exists(path))
                 {
                     return Assembly.LoadFrom(Path.GetFullPath(path));
                 }
@@ -86,7 +86,7 @@ internal class main
             if (Environment.Is64BitProcess)
             {
                 string path = @"x64\Facepunch.Steamworks.Win64.dll";
-                if (FileExist.FileExists(path))
+                if (File.Exists(path))
                 {
                     return Assembly.LoadFrom(Path.GetFullPath(path));
                 }
@@ -96,7 +96,7 @@ internal class main
             else
             {
                 string path = @"x86\Facepunch.Steamworks.Win32.dll";
-                if (FileExist.FileExists(path))
+                if (File.Exists(path))
                 {
                     return Assembly.LoadFrom(Path.GetFullPath(path));
                 }

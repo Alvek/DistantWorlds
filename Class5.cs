@@ -62,7 +62,7 @@ internal static class Class5
     {
         string str = "DistWorldrez.exe";
         int num1 = 2404352;
-        if (FileExist.FileExists(str))
+        if (File.Exists(str))
         {
             if (new FileInfo(str).Length != (long)num1)
             {

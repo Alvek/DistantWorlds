@@ -120,7 +120,7 @@ namespace DistantWorlds
                     if (!string.IsNullOrEmpty(text2))
                     {
                         text3 = text2 + list[i];
-                        if (!FileExist.FileExists(text3))
+                        if (!File.Exists(text3))
                         {
                             text3 = text + list[i];
                         }
@@ -161,7 +161,7 @@ namespace DistantWorlds
             MemoryStream memoryStream = null;
             try
             {
-                if (FileExist.FileExists(string_2))
+                if (File.Exists(string_2))
                 {
                     using FileStream fileStream = new FileStream(string_2, FileMode.Open, FileAccess.Read);
                     byte[] buffer = new byte[fileStream.Length];
@@ -947,7 +947,7 @@ namespace DistantWorlds
                         if (!string.IsNullOrEmpty(string_1))
                         {
                             empty = string_0 + "\\Customization\\" + string_1 + "\\sounds\\effects\\" + filename;
-                            if (!FileExist.FileExists(empty))
+                            if (!File.Exists(empty))
                             {
                                 empty = string_0 + "\\sounds\\effects\\" + filename;
                             }
@@ -955,7 +955,7 @@ namespace DistantWorlds
                         else
                         {
                             empty = string_0 + "\\sounds\\effects\\" + filename;
-                            if (!FileExist.FileExists(empty))
+                            if (!File.Exists(empty))
                             {
                                 empty = string.Empty;
                             }

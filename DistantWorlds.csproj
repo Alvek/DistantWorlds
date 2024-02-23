@@ -12,6 +12,8 @@
 		<EmbeddedResourceUseDependentUponConvention>true</EmbeddedResourceUseDependentUponConvention>
 		<PlatformTarget>AnyCPU</PlatformTarget>
 		<StartupObject>main</StartupObject>
+		<ApplicationIcon>DistantWorlds.ico</ApplicationIcon>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 	  <DebugType>portable</DebugType>
@@ -187,6 +189,7 @@
 		<Compile Remove="DistantWorlds\Gdi32.cs" />
 		<Compile Remove="DistantWorlds\Particle.cs" />
 		<Compile Remove="DistantWorlds\User32.cs" />
+		<Compile Remove="FileExist.cs" />
 		<Compile Remove="privatDFB67E2D.cs" />
 		<Compile Remove="test.cs" />
 		<Compile Remove="test.Designer.cs" />
@@ -204,6 +207,9 @@
 	  <None Remove="DistantWorlds\Resources\DistantWorlds.Splash.resources" />
 	  <None Remove="DistantWorlds\Resources\DistantWorlds.Start.resources" />
 	  <None Remove="lib\DistantWorlds - Copy-Unpacked.exe" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Content Include="DistantWorlds.ico" />
 	</ItemGroup>
 	<!--<ItemGroup>
     <None Remove="DistantWorlds\Resources\DistantWorlds.Controls.EmpireSummaryBuiltObject.resources" />
